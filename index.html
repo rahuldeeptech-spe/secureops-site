@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureOps — Authorized VAPT for Indian SMEs</title>
+  <meta name="description" content="Authorized web, Android, network and cloud VAPT for Indian SMEs. Signed Rules of Engagement first. Not investment advice. Not hack-for-hire.">
+  <meta property="og:title" content="SecureOps — authorized testing, on paper first">
+  <meta property="og:description" content="VAPT and hardening for systems you own. Signed RoE + 50% advance before any test.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,500;9..144,650&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <div class="ribbon">Authorized defensive security · IT Act 2000 · CERT-In · signed RoE before any test · not SEBI investment advice</div>
+  <div class="ribbon warn" id="configRibbon">Phone and email are not on this page. DM on X, LinkedIn, Instagram, Facebook, or Threads — same account you saw the post on.</div>
+
+  <div class="wrap">
+    <header class="top">
+      <a class="brand" href="./">
+        <div class="mark">SO</div>
+        <div>
+          <strong>SecureOps</strong>
+          <div class="muted">Testing desk · India</div>
+        </div>
+      </a>
+      <nav>
+        <a href="#tariff">Tariff</a>
+        <a href="#how">How</a>
+        <a href="#quote">Quote</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Pehle kagaz. Phir test.</p>
+        <h1>We test the systems you own — after you sign.</h1>
+        <p class="lead">We cover both sides of the problem under Indian law: how attacks and scams work in the open world, and how you lock them out of systems you own. Signed RoE before any test. We study illegal activity; we do not do illegal work. No stock tips.</p>
+        <div class="pills">
+          <span class="pill">Web VAPT</span>
+          <span class="pill">Android</span>
+          <span class="pill">Cloud config</span>
+          <span class="pill">Hardening</span>
+          <span class="pill">Public OSINT</span>
+          <span class="pill">Training</span>
+        </div>
+        <p class="muted" style="margin-top:18px">Share-market tools on this machine stay in <strong>paper mode</strong> and are not a public product. Ads for this desk are security services only.</p>
+      </div>
+
+      <form class="challan" id="leadForm" action="#quote">
+        <div class="stamp">RoE first</div>
+        <h2 id="quote">Engagement challan</h2>
+        <label for="company">Company</label>
+        <input id="company" name="company" required placeholder="Registered company name" autocomplete="organization">
+        <div class="row2">
+          <div>
+            <label for="contact_name">Your name</label>
+            <input id="contact_name" name="contact_name" required placeholder="Founder / CTO">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="work email">
+          </div>
+        </div>
+        <label for="whatsapp">WhatsApp</label>
+        <input id="whatsapp" name="whatsapp" placeholder="+91 …">
+        <label for="scope">Asset you own (URL / app / CIDR)</label>
+        <input id="scope" name="scope" required placeholder="https://app.yourcompany.in (owned by us)">
+        <label for="service_key">Service</label>
+        <select id="service_key" name="service_key">
+          <option value="web-vapt-basic">Basic web VAPT — ₹25k–75k</option>
+          <option value="web-vapt-full">Full web VAPT — ₹75k–2L</option>
+          <option value="android">Android review — ₹40k–1L</option>
+          <option value="network-vapt">Network VAPT — ₹50k–1.5L</option>
+          <option value="cloud">Cloud config — ₹50k–1.5L</option>
+          <option value="hardening">Hardening — ₹30k–1L</option>
+          <option value="training">Training (half-day) — ₹25k–75k</option>
+          <option value="osint">Public OSINT / brand watch — ₹25k–1L</option>
+        </select>
+        <label for="source">How you found us</label>
+        <select id="source" name="source">
+          <option value="landing">This page</option>
+          <option value="ad-x">X / Twitter ad</option>
+          <option value="ad-meta">Facebook / Instagram ad</option>
+          <option value="referral">Referral</option>
+        </select>
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" placeholder="Bank / customer asked for a VAPT report; production window; staging URL…"></textarea>
+        <label class="check">
+          <input type="checkbox" name="owns_assets" required>
+          <span>I confirm these assets are owned or controlled by my organisation. Testing starts only after signed AUTH + RoE and 50% advance. I am not asking you to test a third party.</span>
+        </label>
+        <div class="actions">
+          <button type="submit">Save challan</button>
+          <span class="muted">Then DM that JSON on the same social app. Number is not published.</span>
+        </div>
+        <p id="formMsg" class="muted"></p>
+        <div class="docket" id="docket"></div>
+      </form>
+    </div>
+
+    <section id="tariff">
+      <h2>Tariff (indicative INR)</h2>
+      <p class="muted">Starting bands for Indian SMEs. Final number after a scoping call. Not GST-registered — no GST on these quotes.</p>
+      <table class="tariff">
+        <thead>
+          <tr><th>Service</th><th>Band</th><th>What you get</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Basic web VAPT</td><td>25,000–75,000</td><td>Small site / single app, OWASP-aligned, report + one retest</td></tr>
+          <tr><td>Full web VAPT</td><td>75,000–200,000</td><td>Multi-role, auth, APIs</td></tr>
+          <tr><td>Network VAPT</td><td>50,000–150,000</td><td>Up to 50 assets</td></tr>
+          <tr><td>Android review</td><td>40,000–100,000</td><td>Static + dynamic on a build you supply</td></tr>
+          <tr><td>Cloud config</td><td>50,000–150,000</td><td>AWS / GCP / Azure you own</td></tr>
+          <tr><td>Hardening</td><td>30,000–100,000</td><td>Endpoint / firewall / DNS privacy</td></tr>
+          <tr><td>Training</td><td>25,000–75,000</td><td>Half-day workshop</td></tr>
+          <tr><td>Public OSINT / brand watch</td><td>25,000–100,000</td><td>Open sources only; scams / impersonation memo</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Both sides of the wire — under the law</h2>
+      <p>We cover how harm happens in the open world (scams, phishing, impersonation, leaks) and how you lock it out of systems you own. Illegal <b>activity</b> can be the subject of a public-source brief. Illegal <b>work</b> is refused.</p>
+      <div class="steps" style="grid-template-columns:1fr 1fr">
+        <div class="step"><b>Defend</b>Authorized VAPT, hardening, cloud review, training, incident guidance — only after signed RoE.</div>
+        <div class="step"><b>Understand</b>Public OSINT: brand impersonation, phishing kits, leak watch. Cited memo. No stolen data, no account takeovers.</div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h2>How an engagement actually runs</h2>
+      <div class="steps">
+        <div class="step"><b>01 Inquiry</b>You send this challan. We refuse anything you do not own.</div>
+        <div class="step"><b>02 Paper</b>AUTH letter + Rules of Engagement + NDA. Wet-ink or e-sign.</div>
+        <div class="step"><b>03 50%</b>Advance invoice. No scan before money + sign.</div>
+        <div class="step"><b>04 Test</b>Only the URLs/IPs in that RoE. Office hours you pick.</div>
+        <div class="step"><b>05 Report</b>Risk-rated findings, evidence, fixes.</div>
+        <div class="step"><b>06 Close</b>One bundled retest. Balance on delivery.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="nope">
+        <strong>We will not take these jobs.</strong>
+        <ul>
+          <li>Testing a competitor, an ex, a spouse, or “just this one site”.</li>
+          <li>WhatsApp / Instagram / Facebook account recovery or “hacks”.</li>
+          <li>Stock tips, guaranteed returns, “AI 90% accuracy” trading.</li>
+          <li>Bypass of school / bank / government systems you do not own.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Operator: Rahul Deep / Ruhanshi Intelligence.</p>
+      <p>Phone and email are <strong>not on this page</strong>. They go only to a client after a signed job. Until then, DM:</p>
+      <ul>
+        <li>X: <a href="https://x.com/TheMrBihari">@TheMrBihari</a> · <a href="https://x.com/noorchronicle">@noorchronicle</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/deepaktech24/">@deepaktech24</a></li>
+        <li>Facebook page: The Mr Bihari</li>
+      </ul>
+    </section>
+
+    <footer>
+      © SecureOps — authorized security + public OSINT only. Illegal work refused.
+      <a href="privacy.html">Privacy</a> ·
+      <a href="terms.html">Terms</a> ·
+      Not a SEBI-registered Investment Adviser or Research Analyst.
+      Public checklist pack (when published): lawful methodology only, no client data.
+    </footer>
+  </div>
+  <script src="site.js"></script>
+</body>
+</html>
